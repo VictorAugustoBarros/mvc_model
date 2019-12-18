@@ -16,7 +16,6 @@
             require(ROOT . "Views/" . ucfirst(str_replace('Controller', '', get_class($this))) . '/' . $filename . '.php');
             $content_for_layout = ob_get_clean();
 
-            var_dump($this->vars);
             if ($this->layout == false)
             {
                 $content_for_layout;

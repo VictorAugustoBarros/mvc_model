@@ -24,14 +24,8 @@ class tasksController extends Controller
 //            {
 //                header("Location: " . WEBROOT . "tasks/index");
 //            }
-
-            $this->render("index");
-
-        }else{
-            $params = array("alert"=> "Favor inserir os dados necessários");
-            $this->set($params);
-            $this->render("create");
         }
+        $this->render("create");
     }
 
     function edit($id)

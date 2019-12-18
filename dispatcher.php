@@ -41,7 +41,7 @@ class Dispatcher
         } catch (Exception $e) {
             require_once(ROOT . 'Controllers/standardController.php');
             $controller = new standardController();
-            $controller->error($e->getCode());
+            $controller->error('404', $e->getMessage());
         }
     }
 }
