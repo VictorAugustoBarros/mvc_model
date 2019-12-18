@@ -1,0 +1,26 @@
+version: '3'
+services:
+    painel-sms:
+        build:
+          context: ./php
+          dockerfile: Dockerfile-windows
+        restart: always
+        container_name: painel-sms2
+        ports:
+            - 8081:80
+        volumes:
+            - ./to_windows/hosts:/etc/hosts
+            - ../:/var/www/html
+            #- /etc/localtime:/etc/localtime
+            - ./to_windows/config:/var/config
+        network_mode: bridge
+        extra_hosts:
+           - "pgproducao:169.57.148.35"
+           - "pgdesenvolvimento:169.57.148.35"
+           - "dbsms:10.151.27.147"
+           - "dbsia:169.57.148.35"
+           - "dbvoz:169.57.148.45"
+           - "dbmongo:10.150.71.238"
+           - "dbchat:169.57.148.58"
+           - "dbemail:169.57.148.38"
+           - "dbdigital:169.57.148.38"

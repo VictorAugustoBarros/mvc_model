@@ -1,0 +1,10 @@
+version: '2'
+services:
+    mvc_todo:
+        build: php
+        restart: always
+        container_name: mvc_todo
+        ports:
+            - 8091:80
+        volumes:
+            - ../:/var/www/html
