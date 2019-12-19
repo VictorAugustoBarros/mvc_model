@@ -5,5 +5,11 @@ class standardController extends Controller
     {
         $this->render($code);
     }
+
+    public function dashboard()
+    {
+        $this->layout = false;
+        return $this->render('dashboard');
+    }
 }
 ?>
