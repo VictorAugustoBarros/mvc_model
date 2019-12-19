@@ -8,7 +8,6 @@ class standardController extends Controller
 
     public function dashboard()
     {
-        $this->layout = false;
         return $this->render('dashboard');
     }
 }
