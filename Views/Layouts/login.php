@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>New Model</title>
+    <title>Login</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -31,25 +31,6 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="/">MVC Todo</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/tasks/index">Tasks <span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
 <main role="main" class="container">
 
     <div class="starter-template">
@@ -78,11 +59,9 @@
             data: form_data,
             contentType: false,
             processData: false,
-            success: function () {
-                alert('xxx');
+            success: function (resp) {
+                window.location.href = resp;
             }
-        }).done(function (response) { //
-            $("#server-results").html(response);
         });
     });
 </script>

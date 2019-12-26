@@ -39,9 +39,9 @@ class Dispatcher
                 throw new Exception("File not found");
 
         } catch (Exception $e) {
-            require_once(ROOT . 'Controllers/standardController.php');
-            $controller = new standardController();
-            $controller->error('404', $e->getMessage());
+            require_once(ROOT . 'Controllers/loginController.php');
+            $login = new loginController();
+            $login->validaLogin404($e);
         }
     }
 }
